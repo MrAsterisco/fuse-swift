@@ -117,7 +117,7 @@ To run the example project, clone the repo, and open `Example/FuseExample/FuseEx
 
 ## Compatibility
 
-Fuse requires **iOS 8.0 or later** and **macOS 10.13 or later**.
+Fuse requires **iOS 12.0 or later** and **macOS 10.13 or later**.
 
 ## Attribution
 

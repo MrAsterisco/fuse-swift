@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
   name: "Fuse",
   platforms: [
-    .iOS(.v8),
+    .iOS(.v12),
     .macOS(.v10_13)
   ],
   products: [
@@ -14,8 +14,5 @@ let package = Package(
   ],
   targets: [
     .target(name: "Fuse", path: "Fuse")
-  ],
-  swiftLanguageVersions: [
-    .v5
   ]
 )
