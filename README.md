@@ -1,17 +1,24 @@
 # Fuse
 
-[![CI Status](http://img.shields.io/travis/krisk/fuse-swift.svg?style=flat)](https://travis-ci.org/krisk/fuse-swift)
-[![Version](https://img.shields.io/cocoapods/v/Fuse.svg?style=flat)](http://cocoapods.org/pods/Fuse)
-[![License](https://img.shields.io/cocoapods/l/Fuse.svg?style=flat)](http://cocoapods.org/pods/Fuse)
-[![Platform](https://img.shields.io/cocoapods/p/Fuse.svg?style=flat)](http://cocoapods.org/pods/Fuse)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-red.svg)](https://www.paypal.me/kirorisk)
-[![Donate](https://img.shields.io/badge/patreon-donate-red.svg)](https://www.patreon.com/fusejs)
-
 ## What is Fuse?
 
 Fuse is a super lightweight library which provides a simple way to do fuzzy searching.
 
-![Demo](https://i.postimg.cc/MZNZPD1F/bitap-search-demo.gif)
+![Demo](Demo.gif)
+
+> This is an attempt to resurrect the archived original library. So far, no changes have been made to the original codebase except for converting the example to SwiftUI.
+
+## Installation
+
+Fuse is available through [Swift Package Manager](https://swift.org/package-manager).
+
+```swift
+.package(url: "https://github.com/MrAsterisco/fuse-swift", from: "<see GitHub releases>")
+```
+
+### Latest Release
+
+To find out the latest version, look at the Releases tab of this repository.
 
 ## Usage
 
@@ -101,23 +108,20 @@ fuse.search("Man", in: books, completion: { results in
 - `location`: Approximately where in the text is the pattern expected to be found. Defaults to `0`
 - `distance`: Determines how close the match must be to the fuzzy `location` (specified above). An exact letter match which is `distance` characters away from the fuzzy location would score as a complete mismatch. A distance of `0` requires the match be at the exact `location` specified, a `distance` of `1000` would require a perfect match to be within `800` characters of the fuzzy location to be found using a 0.8 threshold. Defaults to `100`
 - `threshold`: At what point does the match algorithm give up. A threshold of `0.0` requires a perfect match (of both letters and location), a threshold of `1.0` would match anything. Defaults to `0.6`
-- `maxPatternLength`: The maximum valid pattern length. The longer the pattern, the more intensive the search operation will be. If the pattern exceeds the `maxPatternLength`, the `search` operation will return `nil`. Why is this important? [Read this](https://en.wikipedia.org/wiki/Word_(computer_architecture)#Word_size_choice). Defaults to `32`
+- `maxPatternLength`: The maximum valid pattern length. The longer the pattern, the more intensive the search operation will be. If the pattern exceeds the `maxPatternLength`, the `search` operation will return `nil`. Why is this important? [Read this](<https://en.wikipedia.org/wiki/Word_(computer_architecture)#Word_size_choice>). Defaults to `32`
 - `isCaseSensitive`: Indicates whether comparisons should be case sensitive. Defaults to `false`
 
 ## Example Project
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and open `Example/FuseExample/FuseExample.xcodeproj`.
 
-## Requirements
+## Compatibility
 
-## Installation
+Fuse requires **iOS 8.0 or later** and **macOS 10.13 or later**.
 
-Fuse is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+## Attribution
 
-```ruby
-pod "Fuse"
-```
+This is a fork of [krisk/Fuse](https://github.com/krisk/fuse-swift).
 
 ## License
 
